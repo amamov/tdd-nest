@@ -41,10 +41,6 @@ describe('Videos', () => {
     await repository.delete({});
   });
 
-  afterAll(async () => {
-    await app.close();
-  });
-
   test('/GET videos', async () => {
     const video = repository.create({
       title: 'anytitle',
@@ -130,5 +126,9 @@ describe('Videos', () => {
 
     expect(response.status).toBe(204);
     expect(videoDeleted).toBeFalsy();
+  });
+
+  afterAll(async () => {
+    await app.close();
   });
 });

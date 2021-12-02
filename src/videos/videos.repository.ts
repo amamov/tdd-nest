@@ -24,9 +24,7 @@ export class VideosRepository {
 
   async create(createVideoDto: CreateVideoDto): Promise<VideoEntity> {
     const video = this.repository.create(createVideoDto);
-
     await this.repository.save(video);
-
     return video;
   }
 

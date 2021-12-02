@@ -9,11 +9,13 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { CreateVideoDto } from './dtos/create-video.dto';
 import { UpdateVideoDto } from './dtos/update-video.dto';
 import { VideoEntity } from './entities/video.entity';
 import { VideosService } from './videos.service';
 
+@ApiTags('VIDEOS')
 @Controller('videos')
 export class VideosController {
   constructor(private readonly videosService: VideosService) {}
